@@ -114,46 +114,34 @@ namespace The_Ray_Tracer_Challenge
 
 
 
-                Canvas c2 = new Canvas(200,200);
-               // Tuple colour1 = new Tuple(1.5f,0.0f,0.0f,0.0f);
-               // Tuple colour2 = new Tuple(0.0f,0.5f,0.0f,0.0f);
-               // Tuple colour3 = new Tuple(-0.5f,0.0f,1.0f,0.0f);
-               // c2.SetPixelColour(0,0,colour1);
-                //c2.SetPixelColour(2,1,colour2);
-               // c2.SetPixelColour(4,2,colour3);
-                 Tuple colour4 = new Tuple(1.0f,0.8f,0.6f,0.0f);
+                Canvas c2 = new Canvas(3840,2160,1);
+
+                int pixelColour = (int) 0xFF0000;
+
+
+
+               
                 for( int canY = 0; canY < c2.Height; canY++){
                      for( int canX = 0; canX < c2.Width; canX++){
-                           c2.SetPixelColour(canX,canY,colour4);
+                           c2.SetPixelColour(canX,canY,pixelColour);
                     }
                 }
                 
-
-                Console.WriteLine(c2.saveCanvasToPPM("textImage.ppm"));
-
-                //Console.WriteLine("Hello\n World");
+                Console.WriteLine("Finished");
+                c2.saveCanvasToPPMInts("textImage.ppm");
 
 
+                Canvas c3 = new Canvas(3840,2160);
+                Tuple colour1 = new Tuple(1.0f,0.8f,0.6f,0.0f);
+
+                 for( int canY = 0; canY < c3.Height; canY++){
+                   for( int canX = 0; canX < c3.Width; canX++){
+                           c3.SetPixelColour(canX,canY,colour1);
+                    }
+                }
+                c3.saveCanvasToPPM("textImage2.ppm");
 
 
-
-
-
-
-
-
-
-
-            //Console.WriteLine(answer);
-            
-           
-           /* TestClass test = new TestClass();
-            Console.WriteLine("Hello World!");
-            Console.WriteLine(test.Testvariable);
-            test.Testvariable = 55;
-            Console.WriteLine(test.Testvariable);
-            var testTuple = (a:4.3f,4.3f,34.4);
-            Console.WriteLine(testTuple.GetType());   */
         }
 
         public static Projectile tick(Environment e, Projectile p){
