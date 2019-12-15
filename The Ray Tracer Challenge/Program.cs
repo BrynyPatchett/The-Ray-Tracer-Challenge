@@ -10,9 +10,9 @@ namespace The_Ray_Tracer_Challenge
     {
         static void Main(string[] args)
         {
-
-            int width = int.Parse(args[0]);
-            int height = int.Parse(args[1]);
+            /*
+           // int width = int.Parse(args[0]);
+            //int height = int.Parse(args[1]);
            
         
             Tuple tuple1 = new Tuple(1.0f,2.0f,3.0f,0.0f);
@@ -95,20 +95,43 @@ namespace The_Ray_Tracer_Challenge
                 tuple6 = Tuple.scaleTuple(tuple6,2);
                 Console.WriteLine(tuple6);
 
-                Tuple tuple7 = new Tuple(1.0f,0.2f,0.4f,0.0f);
-                Tuple tuple8 = new Tuple(0.9f,1.0f,0.1f,0.0f);
-                Console.WriteLine(tuple7 * tuple8);
+               // Tuple tuple7 = new Tuple(1.0f,0.2f,0.4f,0.0f);
+               /// Tuple tuple8 = new Tuple(0.9f,1.0f,0.1f,0.0f);
+                Console.WriteLine(tuple7 * tuple8); */
                 //Console.WriteLine(tuple4.Red+  "is red");
                // Console.WriteLine(tuple4.Green +  "is green");
                // Console.WriteLine(tuple4.Blue+  "is blue");
+               
 
 
             
 
-                Canvas c = new Canvas(10,20);
-                Tuple red = new Tuple(1.0f,0.0f,0.0f,0.0f);
-                c.SetPixelColour(2,3,red);
-                Console.WriteLine(c.GetPixelColour(2,3));
+               // Canvas c = new Canvas(10,20);
+               // Tuple red = new Tuple(1.0f,0.0f,0.0f,0.0f);
+                //c.SetPixelColour(2,3,red);
+                //Console.WriteLine(c.GetPixelColour(2,3));
+
+
+
+
+                Canvas c2 = new Canvas(200,200);
+               // Tuple colour1 = new Tuple(1.5f,0.0f,0.0f,0.0f);
+               // Tuple colour2 = new Tuple(0.0f,0.5f,0.0f,0.0f);
+               // Tuple colour3 = new Tuple(-0.5f,0.0f,1.0f,0.0f);
+               // c2.SetPixelColour(0,0,colour1);
+                //c2.SetPixelColour(2,1,colour2);
+               // c2.SetPixelColour(4,2,colour3);
+                 Tuple colour4 = new Tuple(1.0f,0.8f,0.6f,0.0f);
+                for( int canY = 0; canY < c2.Height; canY++){
+                     for( int canX = 0; canX < c2.Width; canX++){
+                           c2.SetPixelColour(canX,canY,colour4);
+                    }
+                }
+                
+
+                Console.WriteLine(c2.saveCanvasToPPM("textImage.ppm"));
+
+                //Console.WriteLine("Hello\n World");
 
 
 
