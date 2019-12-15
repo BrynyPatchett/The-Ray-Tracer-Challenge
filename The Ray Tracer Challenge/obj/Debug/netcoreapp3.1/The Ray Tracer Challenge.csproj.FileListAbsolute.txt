@@ -1,0 +1,17 @@
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.exe
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.deps.json
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.runtimeconfig.json
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.runtimeconfig.dev.json
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\The Ray Tracer Challenge.pdb
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.csprojAssemblyReference.cache
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.AssemblyInfoInputs.cache
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.AssemblyInfo.cs
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.pdb
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\System.Drawing.Common.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
+C:\Users\Bryny\source\repos\The Ray Tracer Challenge\The Ray Tracer Challenge\obj\Debug\netcoreapp3.1\The Ray Tracer Challenge.csproj.CopyComplete
