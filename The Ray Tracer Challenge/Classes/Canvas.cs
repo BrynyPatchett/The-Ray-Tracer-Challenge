@@ -42,6 +42,10 @@ namespace The_Ray_Tracer_Challenge
 
        public static void writePixelToCanvas(Canvas canvas, int x, int y , Tuple colour){
 
+           if(x >= canvas.Width || x < 0 || y >= canvas.Height || y < 0  ){
+                return;
+            }
+
            int index = y * canvas.Width + x;
            canvas.pixels[index] = colour;
 
@@ -49,11 +53,19 @@ namespace The_Ray_Tracer_Challenge
 
        public void SetPixelColour(int x, int y , Tuple colour){
 
+           if(x >= Width || x < 0 || y >= Height || y < 0  ){
+                return;
+            }
+
            int index = y * Width + x;
            pixels[index] = colour;
 
        }
         public static void writePixelToCanvas(Canvas canvas, int x, int y , int colour){
+
+            if(x >= canvas.Width || x < 0 || y >= canvas.Height || y < 0  ){
+                return;
+            }
 
            int index = y * canvas.Width + x;
            canvas.pixelsInt[index] = colour;
@@ -61,6 +73,10 @@ namespace The_Ray_Tracer_Challenge
        }
 
         public void SetPixelColour(int x, int y , int colour){
+
+            if(x >= Width || x < 0 || y >= Height || y < 0  ){
+                return;
+            }
 
            int index = y * Width + x;
            pixelsInt[index] = colour;
@@ -98,8 +114,8 @@ namespace The_Ray_Tracer_Challenge
           stringBuilder.Append(resInfo);
           stringBuilder.Append(maxColourValue);
 
-           for(int x = 0; x < Width; x++){
-                for(int y = 0; y < Height; y++){
+           for(int y = 0; y < Height; y++){
+                for(int x = 0; x < Width; x++){
                     
                     Tuple colourInfo = pixels[ y * Width + x];
                     string red = ((int)clampColor(colourInfo.Red * 255) + "");
@@ -155,8 +171,8 @@ namespace The_Ray_Tracer_Challenge
 
 
 
-           for(int x = 0; x < Width; x++){
-                for(int y = 0; y < Height; y++){
+           for(int y = 0; y < Height; y++){
+                for(int x = 0; x < Width; x++){
                     
                     int colour = pixelsInt[y * Width + x];
 

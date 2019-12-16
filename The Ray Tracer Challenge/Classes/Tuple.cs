@@ -2,7 +2,7 @@
 
 namespace The_Ray_Tracer_Challenge
 {
-     ///Tuple is used to represent Vectors,Points and Colours
+    ///Tuple is used to represent Vectors,Points and Colours
     public class Tuple
     {
 
@@ -22,7 +22,7 @@ namespace The_Ray_Tracer_Challenge
             z = Z;
             w = W;
         }
-         public Tuple(float X, float Y, float Z)
+        public Tuple(float X, float Y, float Z)
         {
             x = X;
             y = Y;
@@ -44,17 +44,20 @@ namespace The_Ray_Tracer_Challenge
             w = 1;
         }
 
-        public float Red{
+        public float Red
+        {
             get => x;
             set => x = value;
         }
 
-        public float Green{
+        public float Green
+        {
             get => y;
             set => y = value;
         }
 
-        public float Blue{
+        public float Blue
+        {
             get => z;
             set => z = value;
         }
@@ -65,7 +68,7 @@ namespace The_Ray_Tracer_Challenge
         ///Overload of + which adds two tuples together
         ///</summary>
 
-        public static Tuple operator + (Tuple a, Tuple b)
+        public static Tuple operator +(Tuple a, Tuple b)
         {
             if (a.w == 1.0f && b.w == 1.0f)
             {
@@ -101,7 +104,7 @@ namespace The_Ray_Tracer_Challenge
         ///<summary>
         ///Overload of - which subtracts two tuples 
         ///</summary>
-        public static Tuple operator - (Tuple a, Tuple b)
+        public static Tuple operator -(Tuple a, Tuple b)
         {
 
 
@@ -133,41 +136,41 @@ namespace The_Ray_Tracer_Challenge
         ///</summary>
         public static Tuple operator -(Tuple a)
         {
-            return new Tuple(-a.x,-a.y,-a.z,-a.w);
+            return new Tuple(-a.x, -a.y, -a.z, -a.w);
         }
         ///<summary>
         ///Multiplication Operator 
         ///</summary>
         public static Tuple operator *(Tuple a, float scalar)
         {
-            return new Tuple(a.x * scalar,a.y * scalar ,a.z * scalar,a.w * scalar);
+            return new Tuple(a.x * scalar, a.y * scalar, a.z * scalar, a.w * scalar);
         }
         ///<summary>
         ///Multiplay a Tuple by a scalar value 
         ///</summary>
-         public static Tuple scaleTuple (Tuple a, float scalar)
+        public static Tuple scaleTuple(Tuple a, float scalar)
         {
-            return new Tuple(a.x * scalar,a.y * scalar ,a.z * scalar,a.w * scalar);
+            return new Tuple(a.x * scalar, a.y * scalar, a.z * scalar, a.w * scalar);
         }
         ///<summary>
         ///Division Operator 
         ///</summary>
-        public static Tuple operator / (Tuple a, float scalar)
+        public static Tuple operator /(Tuple a, float scalar)
         {
-            return new Tuple(a.x / scalar,a.y / scalar ,a.z / scalar,a.w / scalar);
+            return new Tuple(a.x / scalar, a.y / scalar, a.z / scalar, a.w / scalar);
         }
         ///<summary>
         ///Divide a Tuple by a scalar value 
         ///</summary>
-        public static Tuple divideTuple (Tuple a, float scalar)
+        public static Tuple divideTuple(Tuple a, float scalar)
         {
-            return new Tuple(a.x / scalar,a.y / scalar ,a.z / scalar,a.w / scalar);
+            return new Tuple(a.x / scalar, a.y / scalar, a.z / scalar, a.w / scalar);
         }
 
         ///<summary>
         ///Return the magnitude of a supplied tuple
         ///</summary>
-        public static float Magnitude (Tuple a)
+        public static float Magnitude(Tuple a)
         {
             float mag = MathF.Sqrt((a.x + a.x) + (a.y * a.y) + (a.z * a.z));
             return mag;
@@ -175,15 +178,15 @@ namespace The_Ray_Tracer_Challenge
         ///<summary>
         ///Return the magnitude of a tuple instance
         ///</summary>
-        public float Magnitude ()
+        public float Magnitude()
         {
             float mag = MathF.Sqrt((x * x) + (y * y) + (z * z));
             return mag;
         }
 
-         public static Tuple Normalise (Tuple a)
+        public static Tuple Normalise(Tuple a)
         {
-            
+
             float mag = Magnitude(a);
             return new Tuple(a.x / mag, a.y / mag, a.z / mag, a.w / mag);
 
@@ -191,7 +194,7 @@ namespace The_Ray_Tracer_Challenge
         ///<summary>
         ///Return the normalise magniture of a tuple instance
         ///</summary>
-        public Tuple Normalise ()
+        public Tuple Normalise()
         {
             float mag = Magnitude();
             x = x / mag;
@@ -206,52 +209,52 @@ namespace The_Ray_Tracer_Challenge
         }
 
 
-         public static float Dot (Tuple a, Tuple b)
+        public static float Dot(Tuple a, Tuple b)
         {
-            
+
             return (a.x * b.x) + (a.y * b.y) + (a.z * b.z) + (a.w * b.w);
 
         }
-         public float Dot (Tuple a)
+        public float Dot(Tuple a)
         {
-            
-            return (a.x * x) + (a.y * y) + (a.z * z) + (a.w *w);
+
+            return (a.x * x) + (a.y * y) + (a.z * z) + (a.w * w);
 
         }
-        public static Tuple Cross (Tuple a, Tuple b)
+        public static Tuple Cross(Tuple a, Tuple b)
         {
-            
+
             return new Tuple(
             (a.y * b.z) - (a.z * b.y),
             (a.z * b.x) - (a.x * b.z),
             (a.x * b.y) - (a.y * b.x));
 
         }
-         public Tuple Cross (Tuple a)
+        public Tuple Cross(Tuple a)
         {
-         float tempX = x;
-         float tempY = y;
-         float tempZ = z;   
-         x = tempY * a.z - tempZ * a.y;
-         y = tempZ * a.x - tempX * a.z;
-         z = tempX * a.y - tempY * a.x;
-        return this;
+            float tempX = x;
+            float tempY = y;
+            float tempZ = z;
+            x = tempY * a.z - tempZ * a.y;
+            y = tempZ * a.x - tempX * a.z;
+            z = tempX * a.y - tempY * a.x;
+            return this;
         }
         ///<summary>
         ///Multiply Two Tuples together, is used for colour operations
         ///</summary>
         public static Tuple operator *(Tuple a, Tuple b)
         {
-            return new Tuple(a.x * b.x ,a.y * b.y , a.z * b.z);
+            return new Tuple(a.x * b.x, a.y * b.y, a.z * b.z);
         }
         ///<summary>
         ///Multiply Two Tuples together, is used for colour operations
         ///</summary>
         public void MultiplyTuple(Tuple a)
         {
-           x = a.x * x ;
-           y = a.y * y ;
-           z =  a.z * z;
+            x = a.x * x;
+            y = a.y * y;
+            z = a.z * z;
         }
 
 

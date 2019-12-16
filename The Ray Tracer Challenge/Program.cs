@@ -98,57 +98,100 @@ namespace The_Ray_Tracer_Challenge
                // Tuple tuple7 = new Tuple(1.0f,0.2f,0.4f,0.0f);
                /// Tuple tuple8 = new Tuple(0.9f,1.0f,0.1f,0.0f);
                 Console.WriteLine(tuple7 * tuple8); */
-                //Console.WriteLine(tuple4.Red+  "is red");
-               // Console.WriteLine(tuple4.Green +  "is green");
-               // Console.WriteLine(tuple4.Blue+  "is blue");
-               
-
-
-            
-
-               // Canvas c = new Canvas(10,20);
-               // Tuple red = new Tuple(1.0f,0.0f,0.0f,0.0f);
-                //c.SetPixelColour(2,3,red);
-                //Console.WriteLine(c.GetPixelColour(2,3));
+            //Console.WriteLine(tuple4.Red+  "is red");
+            // Console.WriteLine(tuple4.Green +  "is green");
+            // Console.WriteLine(tuple4.Blue+  "is blue");
 
 
 
 
-                Canvas c2 = new Canvas(3840,2160,1);
 
-                int pixelColour = (int) 0xFF0000;
+            // Canvas c = new Canvas(10,20);
+            // Tuple red = new Tuple(1.0f,0.0f,0.0f,0.0f);
+            //c.SetPixelColour(2,3,red);
+            //Console.WriteLine(c.GetPixelColour(2,3));
 
 
 
-               
-                for( int canY = 0; canY < c2.Height; canY++){
-                     for( int canX = 0; canX < c2.Width; canX++){
-                           c2.SetPixelColour(canX,canY,pixelColour);
-                    }
+
+            /*Canvas c2 = new Canvas(3840,2160,1);
+
+            int pixelColour = (int) 0xFF0000;
+
+
+
+
+            for( int canY = 0; canY < c2.Height; canY++){
+                 for( int canX = 0; canX < c2.Width; canX++){
+                       c2.SetPixelColour(canX,canY,pixelColour);
                 }
-                
-                Console.WriteLine("Finished");
-                c2.saveCanvasToPPMInts("textImage.ppm");
+            }
+
+            Console.WriteLine("Finished");
+            c2.saveCanvasToPPMInts("textImage.ppm");
 
 
-                Canvas c3 = new Canvas(3840,2160);
-                Tuple colour1 = new Tuple(1.0f,0.8f,0.6f,0.0f);
+            Canvas c3 = new Canvas(3840,2160);
+            Tuple colour1 = new Tuple(1.0f,0.8f,0.6f,0.0f);
 
-                 for( int canY = 0; canY < c3.Height; canY++){
-                   for( int canX = 0; canX < c3.Width; canX++){
-                           c3.SetPixelColour(canX,canY,colour1);
-                    }
+             for( int canY = 0; canY < c3.Height; canY++){
+               for( int canX = 0; canX < c3.Width; canX++){
+                       c3.SetPixelColour(canX,canY,colour1);
                 }
-                c3.saveCanvasToPPM("textImage2.ppm");
+            }
+            c3.saveCanvasToPPM("textImage2.ppm");*/
+
+
+
+
+
+            Canvas c2 = new Canvas(900, 550, 1);
+            int backColour = (int)0x000000;
+            int bulletColour = (int)0xFF0000;
+
+            for (int canY = 0; canY < c2.Height; canY++)
+            {
+                for (int canX = 0; canX < c2.Width; canX++)
+                {
+                    c2.SetPixelColour(canX, canY, backColour);
+                }
+            }
+
+
+
+
+            Tuple initialBulletPos = new Tuple(0.0f, 1.0f, 0.0f, 1.0f);
+            Tuple initalVelocity = (new Tuple(1.0f, 1.8f, 0f).Normalise()) * 11.25f;
+
+            Tuple enviroGrav = new Tuple(0.0f, -0.1f, 0.0f);
+            Tuple windSpeed = new Tuple(-0.01f, 0.0f, 0.0f);
+
+            Projectile bullet = new Projectile(initialBulletPos, initalVelocity);
+            Environment e = new Environment(enviroGrav, windSpeed);
+
+            int numberOfTicks = 0;
+            while (!(bullet.Position.x >= c2.Width || bullet.Position.x < 0 || bullet.Position.y >= c2.Height || bullet.Position.y < 0)  )
+            {
+                numberOfTicks++;
+                bullet = tick(e, bullet);
+                c2.SetPixelColour((int)bullet.Position.x, (c2.Height - (int)bullet.Position.y), bulletColour);
+
+                // Console.WriteLine("Reported Position : " + bullet.Position);
+                Console.WriteLine("drawing at x : " + (int)bullet.Position.x + " y: " +  (c2.Height - (int)bullet.Position.y));
+
+            }
+
+            c2.saveCanvasToPPMInts("firstBulletTest.ppm");
 
 
         }
 
-        public static Projectile tick(Environment e, Projectile p){
+        public static Projectile tick(Environment e, Projectile p)
+        {
 
-        Tuple position = p.Position + p.Velocity;
-        Tuple Velocity = p.Velocity + e.Gravity + e.WindSpeed;
-        return new Projectile(position,Velocity);
+            Tuple position = p.Position + p.Velocity;
+            Tuple Velocity = p.Velocity + e.Gravity + e.WindSpeed;
+            return new Projectile(position, Velocity);
 
         }
 
