@@ -9,4 +9,4 @@ Optimizations that can be made:
 
   Update(15/12/2019): Replace basic string concatenation "string += string" with a string builder. Result: Exponential increase in writing the PPM file
   Combined with the new int to represent the pixels(which is optional as Tuple objects can still be used) it now takes significantly less time to create a file:
-  Went from 10min to render and (900x500) image to 10 seconds for a (3840x2160), in both in and tuple mode.
+  Went from 10min to render and (900x500) image to 5 seconds for a (3840x2160), in both int and tuple mode.
