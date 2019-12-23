@@ -2,27 +2,14 @@
 
 namespace The_Ray_Tracer_Challenge
 {
-    public class IdentityMatrix : Matrix
+    public class TranslationMatrix : Matrix
     {
 
-        public IdentityMatrix()
+        public TranslationMatrix(float x, float y, float z)
         {
             floatMatrix = new float[4, 4];
             RowNumber = 4;
             ColNumber = 4;
-            floatMatrix[0, 0] = 1;
-            floatMatrix[1, 1] = 1;
-            floatMatrix[2, 2] = 1;
-            floatMatrix[3, 3] = 1;
-
-
-        }
-
-        public IdentityMatrix(int rowNumber, int colNumber)
-        {
-            floatMatrix = new float[rowNumber, colNumber];
-            RowNumber = rowNumber;
-            ColNumber = colNumber;
 
             for (int r = 0; r < RowNumber; r++)
             {
@@ -34,8 +21,14 @@ namespace The_Ray_Tracer_Challenge
                     }
                 }
             }
+            floatMatrix[0, 3] = x;
+            floatMatrix[1, 3] = y;
+            floatMatrix[2, 3] = z;
+
+
 
         }
+
 
 
     }

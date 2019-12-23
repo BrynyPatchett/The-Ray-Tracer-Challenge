@@ -545,12 +545,51 @@ namespace The_Ray_Tracer_Challenge
             m4[3,3] = 5.0f;
             Matrix mm4 = new Matrix(m4);
 
-            Console.WriteLine((mm3).ToString());
-            Console.WriteLine((mm3 * mm4).ToString());
-            Console.WriteLine(((mm3 * mm4) * mm4.Inverse()).ToString());
+            //Console.WriteLine((mm3).ToString());
+           // Console.WriteLine((mm3 * mm4).ToString());
+           // Console.WriteLine(((mm3 * mm4) * mm4.Inverse()).ToString());
+
+             //IdentityMatrix mm5 = new IdentityMatrix();
+            
 
 
-            //Console.WriteLine(mm4.Inverse());
+           //  Tuple Pos = new Tuple(1.0f, 1.0f, 1.0f, 1.0f);
+
+             /*mm5.floatMatrix[0,0] = 5;
+             Pos = mm5 * Pos;
+            Console.WriteLine((Pos).ToString());*/
+
+            /*Tuple Pos = new Tuple(-3.0f, 4.0f, 5.0f, 1.0f); 
+            Tuple vec = new Tuple(-3.0f, 4.0f, 5.0f, 0.0f); 
+            TranslationMatrix tm = new TranslationMatrix(5,-3,2)
+            Pos = tm.Inverse() * Pos;
+            Console.WriteLine((Pos).ToString());
+            Console.WriteLine((vec).ToString());
+            Console.WriteLine((tm * vec).ToString());*/
+
+           /*Tuple Pos = new Tuple(-4.0f, 6.0f, 8.0f, 1.0f); 
+            Tuple vec = new Tuple(-4.0f, 6.0f, 8.0f, 1.0f); 
+            ScaleMatrix sm = new ScaleMatrix(2,3,4);
+            Pos = sm * Pos;
+            Console.WriteLine((Pos).ToString());
+            Console.WriteLine((vec).ToString());
+            Console.WriteLine((sm * vec).ToString());
+            Console.WriteLine((sm.Inverse() * vec).ToString());
+
+            Tuple Pos1 = new Tuple(2.0f, 3.0f, 4.0f, 1.0f); 
+            ScaleMatrix sm1 = new ScaleMatrix(-1,1,1);
+            Console.WriteLine((sm1 * Pos1).ToString());*/
+
+
+
+
+            Tuple Pos = new Tuple(2.0f, 3, 4.0f, 1.0f); 
+            ShearingMatrix shear = new ShearingMatrix(0,0,0,0,0,1);
+
+            Console.WriteLine((shear * Pos).ToString());
+           
+          
+
 
 
 
