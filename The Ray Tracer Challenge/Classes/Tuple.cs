@@ -43,6 +43,13 @@ namespace The_Ray_Tracer_Challenge
             z = p.z;
             w = 1;
         }
+        public Tuple(float val, float wcomp)
+        {
+            x = val;
+            y = val;
+            z = val;
+            w = wcomp;
+        }
 
         public float Red
         {
@@ -256,6 +263,12 @@ namespace The_Ray_Tracer_Challenge
             y = a.y * y;
             z = a.z * z;
         }
+
+        public static Tuple Reflect(Tuple inVector, Tuple normalVector)
+        {
+           return( inVector - normalVector * 2 * Dot(inVector,normalVector));
+        }
+       
 
 
 

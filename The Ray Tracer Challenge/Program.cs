@@ -504,7 +504,7 @@ namespace The_Ray_Tracer_Challenge
 
 
 
-            float[,] m3 = new float [4,4];
+            /*float[,] m3 = new float [4,4];
 
             m3[0,0] = 3.0f;
             m3[0,1] = -9.0f;
@@ -543,7 +543,7 @@ namespace The_Ray_Tracer_Challenge
             m4[3,1] = -2.0f;
             m4[3,2] = 0.0f;
             m4[3,3] = 5.0f;
-            Matrix mm4 = new Matrix(m4);
+            Matrix mm4 = new Matrix(m4);*/
 
             //Console.WriteLine((mm3).ToString());
            // Console.WriteLine((mm3 * mm4).ToString());
@@ -582,12 +582,562 @@ namespace The_Ray_Tracer_Challenge
 
 
 
+            /*Canvas c2 = new Canvas(500,500,1);
+            Tuple tweleve = new Tuple(0.0f, 0, 1.0f, 1.0f); 
+            Tuple time;
+            RotationMatrix_Y  rotation;
+            int center = 250;
+            int clockColour = (int)0xFF0000;
+            int radius = 3 * (250/8);
 
-            Tuple Pos = new Tuple(2.0f, 3, 4.0f, 1.0f); 
-            ShearingMatrix shear = new ShearingMatrix(0,0,0,0,0,1);
+            TranslationMatrix move = new TranslationMatrix(center,0,center);
+            ScaleMatrix moveR = new ScaleMatrix(radius,0,radius);*/
 
-            Console.WriteLine((shear * Pos).ToString());
+/*
+            for(int i = 0; i < 12; i++){
+
+            rotation = new RotationMatrix_Y(i * (MathF.PI / 6));
+            time = rotation * tweleve;
+            time = moveR * time;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+            }*/
+
+           /* rotation = new RotationMatrix_Y(1 * (MathF.PI / 6));
+            time = rotation * tweleve;
+            time = moveR * time;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  two = new RotationMatrix_Y(2 * (MathF.PI / 6));
+            time = two * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  three= new RotationMatrix_Y(3 * (MathF.PI / 6));
+            time = three * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  four = new RotationMatrix_Y(4 * (MathF.PI / 6));
+            time = four * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  five = new RotationMatrix_Y(5 * (MathF.PI / 6));
+            time = five * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  six = new RotationMatrix_Y(6 * (MathF.PI / 6));
+            time = six * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  seven = new RotationMatrix_Y(7 * (MathF.PI / 6));
+            time = seven * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  eight = new RotationMatrix_Y(8 * (MathF.PI / 6));
+            time = eight * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  nine = new RotationMatrix_Y(9 * (MathF.PI / 6));
+            time = nine * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  ten = new RotationMatrix_Y(10 * (MathF.PI / 6));
+            time = ten * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);
+
+
+            RotationMatrix_Y  eleven = new RotationMatrix_Y(11 * (MathF.PI / 6));
+            time = eleven * tweleve;
+            time.x = time.x * radius;
+            time.z = time.z * radius;
+            time = move * time;
+
+            c2.SetPixelColour((int)time.x,(int)time.z,clockColour);*/
+
+
+
+            /*c2.saveCanvasToPPMInts("firstClockTest.ppm");
+
+
+            Projectile [] proArray = new Projectile[100];
+            for(int i = 0; i < 100; i++){
+                    proArray[i] = new Projectile(new Tuple(1.0f, 1.8f, 0f),new Tuple(1.0f, 1.8f, 0f).Normalise());
+            }   
+            for(int i = 0; i < 100; i++){
+                   Console.WriteLine("Id value: "+ proArray[i].Id);
+            }   
+
            
+           Console.WriteLine("Id value: "+ proArray[45].Id);*/
+
+          // Ray r = new Ray(new Tuple(0,0,5.0f,1), new Tuple(0,0,1,0));
+           //Sphere s = new Sphere();
+           //float [] xs  = Intersect.SphereIntersection(s,r);
+        //Console.WriteLine(xs.Length);
+       // Console.WriteLine(xs[0]);
+           // Console.WriteLine(xs[1]);
+
+            /*Intersection i1 = new Intersection(1,s);
+            Intersection i2 = new Intersection(2,s);
+            Intersection [] xs = Intersect.Intersections(i1,i2);
+            Console.WriteLine(xs.Length);
+            Console.WriteLine(xs[0].T_Value);
+            Console.WriteLine(xs[1].T_Value);*/
+
+          /* Ray r = new Ray(new Tuple(0,0,5.0f,1), new Tuple(0,0,1,0));
+           Sphere s = new Sphere();
+           Intersection [] xs = Intersect.SphereIntersection(s,r);
+           Console.WriteLine(xs.Length);
+           Console.WriteLine(xs[0].Object);
+           Console.WriteLine(xs[1].Object);*/
+
+           /*Sphere s = new Sphere();
+           Intersection i1 = new Intersection(5,s);
+           Intersection i2 = new Intersection(7,s);
+           Intersection i3 = new Intersection(-3,s);
+           Intersection i4 = new Intersection(2,s);
+
+
+
+           Intersection [] xs = Intersect.Intersections(i1,i2,i3,i4);
+           Intersection hit = Intersect.Hit(xs);
+           Console.WriteLine(hit.T_Value);
+        */
+
+          /* Ray r = new Ray(new Tuple(1,2,3.0f,1), new Tuple(0,1,0,0));
+           TranslationMatrix m = new TranslationMatrix(3,4,5);
+           Ray r2 = r.Transform(m);
+           Console.WriteLine(r2.Origin);
+           Console.WriteLine(r2.Direction);*/
+
+            /*Ray r = new Ray(new Tuple(1,2,3.0f,1), new Tuple(0,1,0,0));
+           ScaleMatrix m = new ScaleMatrix(2,3,4);
+           Ray r2 = r.Transform(m);
+           Console.WriteLine(r2.Origin);
+           Console.WriteLine(r2.Direction);*/
+
+            /*Sphere s = new Sphere();
+            Console.WriteLine(s.Transform.ToString());*/
+
+            /*Sphere s = new Sphere();*/
+            
+            /*TranslationMatrix m = new TranslationMatrix(2,3,4);
+            Console.WriteLine(m.ToString());
+            s.Transform = m; 
+             Console.WriteLine(s.Transform.ToString());*/
+
+
+            /*Ray r = new Ray(new Tuple(0,0,-5.0f,1), new Tuple(0,0,1,0));
+            Sphere s = new Sphere();
+            s.Transform = (new ScaleMatrix(2,2,2));
+            Intersection [] xs = Intersect.SphereIntersection(s,r);
+            Console.WriteLine(xs.Length);
+            Console.WriteLine(xs[0].T_Value);
+            Console.WriteLine(xs[1].T_Value);*/
+
+            /*Ray r = new Ray(new Tuple(0,0,-5.0f,1), new Tuple(0,0,1,0));
+            Sphere s = new Sphere();
+            s.Transform = (new TranslationMatrix(5,0,0));
+            Intersection [] xs = Intersect.SphereIntersection(s,r);
+            Console.WriteLine(xs.Length);*/
+
+
+            
+
+            /*Tuple ray_origin = new Tuple(0,0,-5.0f,1);
+            float wall_z = 10.0f;
+            float wall_size = 7.0f;
+
+
+            Canvas c2 = new Canvas(100,100,1);
+
+            float pixel_size = wall_size/100;
+
+            float half = wall_size/2;
+
+            int sphereColour = (int)0xFF0000;
+
+            Sphere s = new Sphere();
+            s.Transform = new ShearingMatrix(1,0,0,0,0,0) * new ScaleMatrix(0.5f,1,1);
+
+            for(int y = 0; y < 100; y++){
+                float world_y = half - pixel_size * y;
+
+                for(int x = 0; x < 100; x ++){
+                    float world_x = -half + pixel_size * x;
+
+                    Tuple position = new Tuple(world_x,world_y,wall_z,1);
+
+                    Ray r = new Ray(ray_origin, (position - ray_origin).Normalise());
+                    Intersection [] xs = Intersect.SphereIntersection(s,r);
+
+                    if(Intersect.Hit(xs) != null){
+                           c2.SetPixelColour(x,y,sphereColour);
+                    }
+                }
+
+
+            } 
+
+
+
+            c2.saveCanvasToPPMInts("FirstRayTrace.ppm");*/
+
+          
+
+
+            
+
+           
+            /* Sphere s = new Sphere();
+             s.Transform = new TranslationMatrix(0,1,0);
+             Console.WriteLine(s.NormalAt(new Tuple(0,1.70711f,-0.70711f,1)));
+
+             Sphere s1 = new Sphere();
+             s1.Transform = new ScaleMatrix(1,0.5f,1) * new RotationMatrix_Z(MathF.PI / 5);
+             Console.WriteLine(s1.NormalAt(new Tuple(0,MathF.Sqrt(2)/2,MathF.Sqrt(2)/2,1)));*/
+
+             /*Tuple v = new Tuple(1,-1,0,0);
+             Tuple n = new Tuple(0,1,0,0);
+             Tuple r = Tuple.Reflect(v,n);
+             Console.WriteLine(r);*/
+
+             /*Tuple v = new Tuple(0,-1,0,0);
+             Tuple n = new Tuple(MathF.Sqrt(2)/2,MathF.Sqrt(2)/2,0,0);
+             Tuple r = Tuple.Reflect(v,n);
+             Console.WriteLine(r);*/
+
+             /*Tuple pos = new Tuple(0,0,0,1);
+             Tuple col = new Tuple(1,1,1,0);
+             PointLight light = new PointLight(pos,col);
+             Console.WriteLine(light.Position);
+             Console.WriteLine(light.ColorIntensity);*/
+
+           //  Material m = new Material();
+            // Tuple pos = new Tuple(0,0,0,1);
+
+
+            // Tuple eyev = new Tuple(0,0,-1,0);
+            // Tuple normalv = new Tuple(0,0,-1,0);
+            // PointLight light = new PointLight(new Tuple(0,0,-10,1), new Tuple(1,1,1,0));
+           //  Tuple result = Material.Lighting(m,light,pos,eyev,normalv);
+            // Console.WriteLine(result);
+
+              
+            // Tuple eyev = new Tuple(0,MathF.Sqrt(2)/2,MathF.Sqrt(2)/2,0);
+             //Tuple normalv = new Tuple(0,0,-1,0);
+            // PointLight light = new PointLight(new Tuple(0,0,-10,1), new Tuple(1,1,1,0));
+            // Tuple result = Material.Lighting(m,light,pos,eyev,normalv);
+            //  Console.WriteLine(result);
+
+             
+            // Tuple eyev = new Tuple(0,0,-1,0);
+            // Tuple normalv = new Tuple(0,0,-1,0);
+            // PointLight light = new PointLight(new Tuple(0,10,-10,1), new Tuple(1,1,1,0));
+            // Tuple result = Material.Lighting(m,light,pos,eyev,normalv);
+             // Console.WriteLine(result);
+
+                
+            // Tuple eyev = new Tuple(0,-MathF.Sqrt(2)/2,-MathF.Sqrt(2)/2,0);
+            // Tuple normalv = new Tuple(0,0,-1,0);
+            // PointLight light = new PointLight(new Tuple(0,10,-10,1), new Tuple(1,1,1,0));
+            // Tuple result = Material.Lighting(m,light,pos,eyev,normalv);
+             // Console.WriteLine(result);
+
+              // Tuple eyev = new Tuple(0,0,-1,0);
+           //  Tuple normalv = new Tuple(0,0,-1,0);
+          //   PointLight light = new PointLight(new Tuple(0,0,10,1), new Tuple(1,1,1,0));
+          //   Tuple result = Material.Lighting(m,light,pos,eyev,normalv);
+          //    Console.WriteLine(result);
+
+             
+
+
+           /* Material m = new Material();
+            m.Colour = new Tuple(1,0.2f,1,0);
+            Sphere s = new Sphere();
+           // s.Transform = s.Transform * new ScaleMatrix(1f,0.25f,1f);
+            s.Material = m;
+
+            PointLight light = new PointLight(new Tuple (-10,10,-10,1), new Tuple(1,1,1,0));
+
+
+            Tuple ray_origin = new Tuple(0,0,-5.0f,1);
+            float wall_z = 10.0f;
+            float wall_size = 7.0f;
+
+
+            Canvas c2 = new Canvas(500,500);
+
+            float pixel_size = wall_size/500;
+
+            float half = wall_size/2;
+
+            
+
+            for(int y = 0; y < 500; y++){
+                float world_y = half - pixel_size * y;
+
+                for(int x = 0; x < 500; x ++){
+                    float world_x = -half + pixel_size * x;
+
+                    Tuple position = new Tuple(world_x,world_y,wall_z,1);
+
+                    Ray r = new Ray(ray_origin, (position - ray_origin).Normalise());
+                   
+
+
+                    Intersection [] xs = Intersect.SphereIntersection(s,r);
+                    Intersection hit = Intersect.Hit(xs);
+
+                    if(hit != null){
+
+                            Tuple point = r.Position(hit.T_Value_Tuple);
+                            Tuple normal = s.NormalAt(point);
+                            Tuple eye = -r.Direction;
+
+                            Tuple Colour = Material.Lighting(hit.Object.Material, light, point,eye,normal);
+
+
+                           c2.SetPixelColour(x,y,Colour);
+                    }
+                }
+
+
+            } 
+
+
+
+            c2.saveCanvasToPPM("SecondRayTrace.ppm");*/
+           /* World w = new World();
+            Ray r = new Ray(new Tuple(0,0,-5,1), new Tuple(0,0,1,0));
+            Intersection [] xs = World.Intersect_World(w,r);
+            Console.WriteLine(xs.Length);
+            Console.WriteLine(xs[0].T_Value);
+            Console.WriteLine(xs[1].T_Value);
+            Console.WriteLine(xs[2].T_Value);
+            Console.WriteLine(xs[3].T_Value);
+
+            Sphere s = new Sphere();
+            Intersection i = new Intersection(4,s);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(comps.T_Value);
+            Console.WriteLine(comps.Object);
+            Console.WriteLine(comps.Point);
+            Console.WriteLine(comps.EyeVector);
+            Console.WriteLine(comps.NormalVector);*/
+
+            /*Ray r = new Ray(new Tuple(0,0,-5,1), new Tuple(0,0,1,0));
+            Sphere s = new Sphere();
+            Intersection i = new Intersection(1,s);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(comps.Point);
+            Console.WriteLine(comps.EyeVector);
+            Console.WriteLine(comps.NormalVector);
+            Console.WriteLine(comps.Inside);*/
+
+            /*Ray r = new Ray(new Tuple(0,0,0,1), new Tuple(0,0,1,0));
+            Sphere s = new Sphere();
+            Intersection i = new Intersection(1,s);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(comps.Point);
+            Console.WriteLine(comps.EyeVector);
+            Console.WriteLine(comps.NormalVector);
+            Console.WriteLine(comps.Inside);*/
+
+            /*World w = new World();
+            Ray r = new Ray(new Tuple(0,0,-5,1), new Tuple(0,0,1,0));
+            Sphere s1 = w.SceneObjects[0]; 
+            Intersection i = new Intersection(4,s1);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(World.ShadeHit(w,comps));*/
+
+            /*World w = new World();
+            w.SceneLight = new PointLight(new Tuple(0,0.25f,0,1), new Tuple(1,1,1,0));
+            Ray r = new Ray(new Tuple(0,0,0,1), new Tuple(0,0,1,0));
+            Sphere s2 = w.SceneObjects[1]; 
+            Intersection i = new Intersection(0.5f,s2);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(World.ShadeHit(w,comps));*/
+
+          /* World w = new World();
+            Ray r = new Ray(new Tuple(0,0,-5f,1), new Tuple(0,1,0,0));
+            Tuple colour = World.ColourAt(w,r);
+             Console.WriteLine(colour);*/
+
+            /*World w = new World();
+            Ray r = new Ray(new Tuple(0,0,-5f,1), new Tuple(0,0,1,0));
+            Tuple colour = World.ColourAt(w,r);
+            Console.WriteLine(colour);*/
+
+             /*World w = new World();
+             Sphere outer = w.SceneObjects[0]; 
+             outer.Material.Ambient = 1;
+             Sphere inner = w.SceneObjects[1]; 
+             inner.Material.Ambient = 1;
+             Ray r = new Ray(new Tuple(0,0,0.75f,1), new Tuple(0,0,-1,0));
+             Tuple colour = World.ColourAt(w,r);
+             Console.WriteLine(colour);
+             Console.WriteLine(inner.Material.Colour);*/
+
+
+             /*Tuple from = new Tuple(0,0,0,1);
+             Tuple to = new Tuple(0,0,-1,1);
+             Tuple up = new Tuple(0,1,0,0);
+             ViewMatrix view = new ViewMatrix(from,to,up);
+             Console.WriteLine(view.floatMatrix.ToString());
+             Console.WriteLine(view.ToString());*/
+
+            /*Tuple from = new Tuple(0,0,0,1);
+             Tuple to = new Tuple(0,0,1,1);
+             Tuple up = new Tuple(0,1,0,0);
+
+             ViewMatrix view = new ViewMatrix(from,to,up);
+             Console.WriteLine(view);
+             Console.WriteLine(new ScaleMatrix(-1,1,-1));*/
+
+             /*Tuple from = new Tuple(0,0,8,1);
+             Tuple to = new Tuple(0,0,0,1);
+             Tuple up = new Tuple(0,1,0,0);
+             ViewMatrix view = new ViewMatrix(from,to,up);
+             Console.WriteLine(view);
+             Console.WriteLine(new TranslationMatrix(0,0,-8));*/
+
+             /*Tuple from = new Tuple(1,3,2,1);
+             Tuple to = new Tuple(4,-2,8,1);
+             Tuple up = new Tuple(1,1,0,0);
+             ViewMatrix view = new ViewMatrix(from,to,up);
+             Console.WriteLine(view); */
+
+            /* Camera c = new Camera(200,125,MathF.PI/2);
+             Console.WriteLine(c.PixelSize);
+              Console.WriteLine(c.Transform);*/
+
+             /* Camera c = new Camera(201,101,MathF.PI/2);
+              c.Transform = new RotationMatrix_Y(MathF.PI/4) * new TranslationMatrix(0,-2,5);
+              Ray r = c.RayForPixel(100,50);
+              Console.WriteLine(r.Origin);
+              Console.WriteLine(r.Direction); */
+
+              Sphere floor = new Sphere();
+              floor.Transform = new ScaleMatrix(10,0.01f,10);
+              floor.Material.Colour = new Tuple(1,0.9f,0.9f);
+              floor.Material.Specular = 0;
+
+              Sphere leftWall = new Sphere();
+              leftWall.Transform = new TranslationMatrix(0,0,5)
+                * new RotationMatrix_Y (-(MathF.PI)/4)
+                * new RotationMatrix_X(MathF.PI/2)
+                * new ScaleMatrix(10,0.01f,10);
+              leftWall.Material.Colour = new Tuple(1,0.9f,0.9f);
+              leftWall.Material.Specular = 0;
+
+              Sphere rightWall = new Sphere();
+              rightWall.Transform = new TranslationMatrix(0,0,5)
+                * new RotationMatrix_Y ((MathF.PI)/4)
+                * new RotationMatrix_X(MathF.PI/2)
+                * new ScaleMatrix(10,0.01f,10);
+              rightWall.Material.Colour = new Tuple(1,0.9f,0.9f);
+              rightWall.Material.Specular = 0;
+
+              Sphere middle = new Sphere();
+              middle.Transform = new TranslationMatrix(-0.5f,1,0.5f);
+              middle.Material.Colour = new Tuple(0.1f,1f,0.5f);
+              middle.Material.Diffuse = 0.7f;
+              middle.Material.Specular = 0.3f;
+
+              Sphere right = new Sphere();
+              right.Transform = new TranslationMatrix(1.5f,0.5f,-0.5f) * new ScaleMatrix(0.5f,0.5f,0.5f);
+              right.Material.Colour = new Tuple(0.5f,1f,0.1f);
+              right.Material.Diffuse = 0.7f;
+              right.Material.Specular = 0.3f;
+
+              Sphere left = new Sphere();
+              left.Transform = new TranslationMatrix(-1.5f,0.33f,-0.75f) * new ScaleMatrix(0.33f,0.33f,0.33f);
+              left.Material.Colour = new Tuple(1f,0.8f,0.1f);
+              left.Material.Diffuse = 0.7f;
+              left.Material.Specular = 0.3f;
+
+
+              Sphere[] WorldObjects = {floor, leftWall,rightWall,left,middle,right};
+              PointLight light = new PointLight(new Tuple(-10,10,-10,1), new Tuple(1,1,1,0));
+              World world = new World(light,WorldObjects);
+              Camera camera = new Camera(800,600,MathF.PI/3);
+              camera.Transform = new ViewMatrix(new Tuple(0,1.5f,-5,1),new Tuple(0,1,0,1), new Tuple(0,1,0,0));
+
+              Canvas image = camera.Render(world);
+
+              image.saveCanvasToPPM("FirstScene.ppm");
+              Console.WriteLine("done");
+              
+
+
+
+
+
+
+
+
+
+
+
+              
+
+
+
+
+
+            
+
+
+
+        
+
+            
+
+
+
+
+
+
+
           
 
 
