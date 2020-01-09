@@ -2,9 +2,43 @@
 As a means to practice programming and to learn C# along with .NET Core I will be attempting to implement a Ray Tracer described in the following book: https://pragprog.com/book/jbtracer/the-ray-tracer-challenge
 
 
+
+**Chapter 7: Chapter implements a camera and view transformations matrix to achieve the creation of a scene with allows for simple object and camera movement**
+
+Result: Using the example layout given in the book this scene shows how the camera and multiple objects can be placed in a scene and how the Phong lighting model is applied to all objects.
+
+![Screenshot](Screenshots/firstScene.png)
+
+**Chapter 6: Chapter focuses on using the Phong Shading model to add specular, diffuse and ambient lighting**
+
+Result: Using the Phong Shading model to draw the same Sphere as Chapter 5. A point light it used to light the scene and a material is applied to the sphere to give it colour properties instead of a single fixed colour.
+
+![Screenshot](Screenshots/phonglighting.png)
+
+
+
+**Chapter 5: Chapter focused implementing Ray-Sphere intersections which will be used as the basis of the ray tracer**
+
+Result: Using Ray-Sphere intersections to draw a flat shaded Sphere which appears 2D, This is also the first time using ray tracing to draw. This Screenshot also shows using matrix transformations to stretch and scale the circle.
+
+![Screenshot](Screenshots/firstRayTrace.png)
+
+
+
+
+**Chapter 4: Chapter Focused implementing matrix transformations such as translation, rotation and scaling**
+
+Result: Drawing a clock via manipulating pixel positions with matrix transformations.
+
+![Screenshot](Screenshots/pixelClock.png)
+
+
+
+
 **Chapter 2: Chapter Focused on creating a Canvas Object to enabling drawing.**
 
-Result:
+Result: Drawing an arch spanning the canvas.
+
 ![Screenshot](Screenshots/CanvasArch.png)
 
 
