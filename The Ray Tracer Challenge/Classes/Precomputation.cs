@@ -18,6 +18,8 @@ namespace The_Ray_Tracer_Challenge
 
         public bool Inside{get;set;}
 
+        public Tuple OverPoint{get;set;}
+
         public Precomputation()
         {
             

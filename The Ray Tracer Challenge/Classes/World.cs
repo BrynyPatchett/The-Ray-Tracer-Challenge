@@ -50,8 +50,10 @@ namespace The_Ray_Tracer_Challenge
         }
 
         public static Tuple ShadeHit(World world, Precomputation comps){
-            Tuple Colour = Material.Lighting(comps.Object.Material,world.SceneLight,comps.Point,comps.EyeVector,comps.NormalVector);
-            return Colour;
+           bool shadowed = IsShadowed(world,comps.OverPoint);
+            Tuple Colour = Material.Lighting(comps.Object.Material,world.SceneLight,comps.OverPoint,comps.EyeVector,comps.NormalVector,shadowed);
+           return Colour;
+           
         }
         
         public static Tuple ColourAt(World world, Ray ray){
@@ -68,6 +70,19 @@ namespace The_Ray_Tracer_Challenge
           
         }
 
-
+         public static bool IsShadowed(World world,Tuple point){
+            Tuple lightv = world.SceneLight.Position - point;
+            float distance = lightv.Magnitude();
+            Tuple direction = lightv.Normalise();
+            Ray shadowRay = new Ray(point,direction);
+            Intersection[] worldIntersections = IntersectWorld(world,shadowRay);
+            Intersection hit = Intersect.Hit(worldIntersections);
+             if(hit != null){
+                 if(hit.T_Value < distance){
+                     return true;
+                 }  
+        }
+        return false;     
+         }
     }
 }

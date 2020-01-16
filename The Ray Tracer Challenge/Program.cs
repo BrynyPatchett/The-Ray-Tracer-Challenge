@@ -1056,7 +1056,7 @@ namespace The_Ray_Tracer_Challenge
               Console.WriteLine(r.Origin);
               Console.WriteLine(r.Direction); */
 
-              Sphere floor = new Sphere();
+/*              Sphere floor = new Sphere();
               floor.Transform = new ScaleMatrix(10,0.01f,10);
               floor.Material.Colour = new Tuple(1,0.9f,0.9f);
               floor.Material.Specular = 0;
@@ -1105,9 +1105,104 @@ namespace The_Ray_Tracer_Challenge
               Canvas image = camera.Render(world);
 
               image.saveCanvasToPPM("FirstScene.ppm");
-              Console.WriteLine("done");
-              
+              Console.WriteLine("done");*/
+              /*Material m = new Material();
+              Tuple position = new Tuple(0,0,0,1);
+              Tuple eyev = new Tuple(0,0,-1,0);
+              Tuple normalv = new Tuple(0,0,-1,0);
+              PointLight light = new PointLight(new Tuple(0,0,-10,1),new Tuple (1,1,1,0));
+              bool inShadow = true;
 
+              Console.WriteLine(Material.Lighting(m,light,position,eyev,normalv,inShadow));*/
+
+              /*World w = new World();
+              Tuple p1 = new Tuple(0,10,0,1);
+              Tuple p2 = new Tuple(10,-10,10,1);
+              Tuple p3 = new Tuple(-20,20,-20,1);
+              Tuple p4 = new Tuple(-2,20,-2,1);
+              Console.WriteLine(World.IsShadowed(w,p1));
+              Console.WriteLine(World.IsShadowed(w,p2));
+              Console.WriteLine(World.IsShadowed(w,p3));
+              Console.WriteLine(World.IsShadowed(w,p4));*/
+
+              /*World w = new World();
+              PointLight light = new PointLight(new Tuple(0,0,-10,1),new Tuple (1,1,1,0));
+              TranslationMatrix m = new TranslationMatrix(0,0,10);
+              w.SceneObjects[1].Transform =    m;
+              Ray r = new Ray(new Tuple(0,0,5,1), new Tuple(0,0,1,0));
+              Intersection i = new Intersection(4,w.SceneObjects[1]);
+              Precomputation comps = Intersect.PrepareComputations(i,r);
+              Tuple c = World.ShadeHit(w,comps);
+              Console.WriteLine(w.SceneObjects[1].Material.Ambient);
+              Console.WriteLine(c);*/
+           /* Ray r = new Ray(new Tuple(0,0,-5,1), new Tuple(0,0,1,0));
+            Sphere s = new Sphere();
+            s.Transform = new TranslationMatrix(0,0,1);
+            Intersection i = new Intersection(5,s);
+            Precomputation comps = Intersect.PrepareComputations(i,r);
+            Console.WriteLine(comps.OverPoint.z + " < " +  -Arithmetic.EPSILON/2);
+            Console.WriteLine(comps.Point.z + " > " + comps.OverPoint.z);*/
+
+
+
+
+
+
+
+
+
+             
+
+              Sphere floor = new Sphere();
+              floor.Transform = new ScaleMatrix(10,0.01f,10);
+              floor.Material.Colour = new Tuple(1,0.9f,0.9f);
+              floor.Material.Specular = 0;
+
+              Sphere leftWall = new Sphere();
+              leftWall.Transform = new TranslationMatrix(0,0,5)
+                * new RotationMatrix_Y (-(MathF.PI)/4)
+                * new RotationMatrix_X(MathF.PI/2)
+                * new ScaleMatrix(10,0.01f,10);
+              leftWall.Material.Colour = new Tuple(1,0.9f,0.9f);
+              leftWall.Material.Specular = 0;
+
+              Sphere rightWall = new Sphere();
+              rightWall.Transform = new TranslationMatrix(0,0,5)
+                * new RotationMatrix_Y ((MathF.PI)/4)
+                * new RotationMatrix_X(MathF.PI/2)
+                * new ScaleMatrix(10,0.01f,10);
+              rightWall.Material.Colour = new Tuple(1,0.9f,0.9f);
+              rightWall.Material.Specular = 0;
+
+              Sphere middle = new Sphere();
+              middle.Transform = new TranslationMatrix(-0.5f,1,0.5f);
+              middle.Material.Colour = new Tuple(0.1f,1f,0.5f);
+              middle.Material.Diffuse = 0.7f;
+              middle.Material.Specular = 0.3f;
+
+              Sphere right = new Sphere();
+              right.Transform = new TranslationMatrix(1.5f,0.5f,-0.5f) * new ScaleMatrix(0.5f,0.5f,0.5f);
+              right.Material.Colour = new Tuple(0.5f,1f,0.1f);
+              right.Material.Diffuse = 0.7f;
+              right.Material.Specular = 0.3f;
+
+              Sphere left = new Sphere();
+              left.Transform = new TranslationMatrix(-1.5f,0.33f,-0.75f) * new ScaleMatrix(0.33f,0.33f,0.33f);
+              left.Material.Colour = new Tuple(1f,0.8f,0.1f);
+              left.Material.Diffuse = 0.7f;
+              left.Material.Specular = 0.3f;
+
+
+              Sphere[] WorldObjects = {floor, leftWall,rightWall,left,middle,right};
+              PointLight light = new PointLight(new Tuple(-10,10,-10,1), new Tuple(1,1,1,0));
+              World world = new World(light,WorldObjects);
+              Camera camera = new Camera(200,200,MathF.PI/3);
+              camera.Transform = new ViewMatrix(new Tuple(0,1.5f,-5,1),new Tuple(0,1,0,1), new Tuple(0,1,0,0));
+
+              Canvas image = camera.Render(world);
+
+              image.saveCanvasToPPM("SecondSceneLowRes.ppm");
+              Console.WriteLine("done");
 
 
 

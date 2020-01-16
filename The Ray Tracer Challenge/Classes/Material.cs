@@ -35,7 +35,7 @@ namespace The_Ray_Tracer_Challenge
                 Shininess = shininess;
         }
 
-        public static Tuple Lighting(Material m, PointLight light, Tuple position, Tuple eyeVec, Tuple normalVec){
+        public static Tuple Lighting(Material m, PointLight light, Tuple position, Tuple eyeVec, Tuple normalVec, bool inShadow){
 
             Tuple colour;
             Tuple ambient;
@@ -54,7 +54,14 @@ namespace The_Ray_Tracer_Challenge
             if(lightDotNormal < 0){
                 diffuse = new Tuple(0,0,0,0);
                 specular = new Tuple(0,0,0,0);
-            }else{
+            }
+            else if(inShadow)
+            {
+                diffuse = new Tuple(0,0,0,0);
+                specular = new Tuple(0,0,0,0);
+            }
+            
+            else{
                 diffuse = effective_colour * m.Diffuse * lightDotNormal;
                 Tuple reflectV = Tuple.Reflect(-lightDirection, normalVec);
                 float reflectDotEye = Tuple.Dot(reflectV,eyeVec);

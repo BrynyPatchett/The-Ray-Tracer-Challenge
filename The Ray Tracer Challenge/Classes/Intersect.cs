@@ -73,7 +73,9 @@ namespace The_Ray_Tracer_Challenge
                     }
                 }  
             }
-
+            if(lowestFound == null){
+                return null;
+            }
             if(lowestFound.T_Value < 0){
                 return null;
             }
@@ -99,13 +101,13 @@ namespace The_Ray_Tracer_Challenge
 
 
             comp.NormalVector = comp.Object.NormalAt(comp.Point);
-            if(comp.NormalVector.Dot(comp.EyeVector) < 0f){
+            if(comp.NormalVector.Dot(comp.EyeVector) < 0){
                 comp.Inside = true;
                 comp.NormalVector = -comp.NormalVector;
             }else{
                 comp.Inside = false;
             }
-
+            comp.OverPoint = comp.Point + (comp.NormalVector * Arithmetic.EPSILON);
             return comp;
           
         }
