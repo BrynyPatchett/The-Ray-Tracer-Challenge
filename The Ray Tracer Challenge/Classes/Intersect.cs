@@ -40,7 +40,28 @@ namespace The_Ray_Tracer_Challenge
 
 
         
-        }//params alllows unlimited number of arguments of given type, turns given params into an array
+        }
+
+
+public static Intersection[] IntersectShape(Shape s, Ray r){
+
+            
+            //Calculating the discriminant
+            //- new Tuple, is treating sphere as centered at world origin
+            Ray transformedRay = r.Transform(s.Transform.Inverse());
+            return s.LocalIntersect(transformedRay);
+
+        }
+
+
+
+
+
+
+
+        
+        
+        //params alllows unlimited number of arguments of given type, turns given params into an array
             public static Intersection[] Intersections(params Intersection[] i){
                 Intersection[] arrayOfIntersections = new Intersection[i.Length];
                 for(int j = 0; j < i.Length; j++){
@@ -100,7 +121,7 @@ namespace The_Ray_Tracer_Challenge
             comp.EyeVector = -ray.Direction;
 
 
-            comp.NormalVector = comp.Object.NormalAt(comp.Point);
+            comp.NormalVector = Shape.NormalAt(comp.Object,comp.Point);
             if(comp.NormalVector.Dot(comp.EyeVector) < 0){
                 comp.Inside = true;
                 comp.NormalVector = -comp.NormalVector;

@@ -1153,7 +1153,7 @@ namespace The_Ray_Tracer_Challenge
 
              
 
-              Sphere floor = new Sphere();
+              /*Sphere floor = new Sphere();
               floor.Transform = new ScaleMatrix(10,0.01f,10);
               floor.Material.Colour = new Tuple(1,0.9f,0.9f);
               floor.Material.Specular = 0;
@@ -1172,7 +1172,19 @@ namespace The_Ray_Tracer_Challenge
                 * new RotationMatrix_X(MathF.PI/2)
                 * new ScaleMatrix(10,0.01f,10);
               rightWall.Material.Colour = new Tuple(1,0.9f,0.9f);
-              rightWall.Material.Specular = 0;
+              rightWall.Material.Specular = 0;*/
+
+               Shape p = new Plane();
+               p.Material.Colour = new Tuple(1.0f,0f,0.0f);
+               p.Material.Diffuse = 0.7f;
+               p.Material.Specular = 0.3f;
+
+               Shape p2 = new Plane();
+               p2.Transform =new RotationMatrix_X(MathF.PI/2) * new TranslationMatrix(0f,0,1000f);
+               p2.Material.Colour = new Tuple(0.0f,.2f,.8f);
+               p2.Material.Diffuse = 0.7f;
+               p2.Material.Specular = 0.3f;
+
 
               Sphere middle = new Sphere();
               middle.Transform = new TranslationMatrix(-0.5f,1,0.5f);
@@ -1193,16 +1205,53 @@ namespace The_Ray_Tracer_Challenge
               left.Material.Specular = 0.3f;
 
 
-              Sphere[] WorldObjects = {floor, leftWall,rightWall,left,middle,right};
+              Shape[] WorldObjects = {p,left,middle,right};
               PointLight light = new PointLight(new Tuple(-10,10,-10,1), new Tuple(1,1,1,0));
               World world = new World(light,WorldObjects);
-              Camera camera = new Camera(200,200,MathF.PI/3);
+              Camera camera = new Camera(720,480,MathF.PI/3);
               camera.Transform = new ViewMatrix(new Tuple(0,1.5f,-5,1),new Tuple(0,1,0,1), new Tuple(0,1,0,0));
 
               Canvas image = camera.Render(world);
 
-              image.saveCanvasToPPM("SecondSceneLowRes.ppm");
+              image.saveCanvasToPPM("ThirdScene.ppm");
               Console.WriteLine("done");
+
+              /*Shape s = new TestShape();
+              Ray r = new Ray(new Tuple(0,0,-5,1), new Tuple(0,0,1,0));
+              s.Transform = new TranslationMatrix(5,0,0);
+              Intersection[] xs = Intersect.IntersectShape(s,r);
+              Console.WriteLine(s.LocalRay.Origin);
+              Console.WriteLine(s.LocalRay.Direction);
+              Console.WriteLine("done");*/
+
+              /*Shape s = new TestShape();
+              s.Transform = new TranslationMatrix(0,1,0);
+              Console.WriteLine(Shape.NormalAt(s,new Tuple(0,1.70711f,-0.70711f,1)));*/
+
+              /*Shape s = new TestShape();
+              s.Transform = new ScaleMatrix(1,0.5f,1) * new RotationMatrix_Z(MathF.PI/5);
+              Console.WriteLine(Shape.NormalAt(s,new Tuple(0,MathF.Sqrt(2)/2,-MathF.Sqrt(2)/2,1)));
+              
+              
+              Console.WriteLine("done");*/
+
+               /* Shape p = new Plane();
+               /* Console.WriteLine(p.LocalNormalAt(new Tuple(0,0,0,1)));
+                Console.WriteLine(p.LocalNormalAt(new Tuple(10,0,-10,1)));
+                Console.WriteLine(p.LocalNormalAt(new Tuple(-5,0,150,1)));
+
+                Ray r = new Ray(new Tuple(0,1,0,1),new Tuple(0,-1,0,0));
+                Intersection [] i = p.LocalIntersect(r);
+                Console.WriteLine(i.Length);
+                Console.WriteLine(i[0].T_Value);
+                Console.WriteLine(i[0].Object.Id);*/
+               
+
+
+
+
+
+
 
 
 

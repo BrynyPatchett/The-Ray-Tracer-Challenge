@@ -10,9 +10,9 @@ namespace The_Ray_Tracer_Challenge
 
         public float T_Value{get;set;}
         public Tuple T_Value_Tuple{get;set;}
-        public Sphere Object{get;set;}
+        public Shape Object{get;set;}
        
-        public Intersection(float t , Sphere obj){
+        public Intersection(float t , Shape obj){
             T_Value = t;
             T_Value_Tuple = new Tuple(t,1);
             Object = obj;

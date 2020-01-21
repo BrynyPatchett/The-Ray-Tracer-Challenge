@@ -5,7 +5,7 @@ namespace The_Ray_Tracer_Challenge
     public class World
     {
         //Refactor this into objects array once objects superclass is implemented
-        public Sphere [] SceneObjects{get;set;}
+        public Shape [] SceneObjects{get;set;}
         public PointLight SceneLight{get;set;}
 
         
@@ -27,7 +27,7 @@ namespace The_Ray_Tracer_Challenge
              SceneLight = light;
 
          }
-          public World(PointLight light, Sphere[] sceneObjects){
+          public World(PointLight light, Shape[] sceneObjects){
 
             SceneObjects = sceneObjects;
             SceneLight = light;
@@ -38,7 +38,7 @@ namespace The_Ray_Tracer_Challenge
             int objCount = world.SceneObjects.Length; 
             List<Intersection> intersectionList = new List<Intersection>();
             for(int i = 0; i < objCount; i++ ){
-                Intersection[] intersection = Intersect.SphereIntersection(world.SceneObjects[i],r);
+                Intersection[] intersection = Intersect.IntersectShape(world.SceneObjects[i],r);
                 //practicing foreach loops 
                 foreach(Intersection elem in intersection){
                     intersectionList.Add(elem);

@@ -1,9 +1,16 @@
 **The-Ray-Tracer-Challenge:**
 As a means to practice programming and to learn C# along with .NET Core I will be attempting to implement a Ray Tracer described in the following book: https://pragprog.com/book/jbtracer/the-ray-tracer-challenge
 
+**Chapter 9: Chapter focuses on refactoring code to make adding primitive objects faster to implement and more generic, added a Plane primitive**
+
+Result: The scene produced in Chapter 8 with a floor plane.
+
+![Screenshot](Screenshots/FloorScene.png)
+
+
 **Chapter 8: Chapter implements Shadows into the scene. Focused on using the new EPSILON value (Changed from 0.0001 to 0.002) in combination with the surface normal to shade slightly out from the surface as to mitigate scene "acne"**
 
-Result: The scene produced in Chapter 7 with shadows. 
+Result: The scene produced in Chapter 7 with shadows.
 
 ![Screenshot](Screenshots/ShadowScene.png)
 

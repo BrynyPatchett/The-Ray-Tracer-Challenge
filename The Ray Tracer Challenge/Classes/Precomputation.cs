@@ -8,7 +8,7 @@ namespace The_Ray_Tracer_Challenge
 
         public float T_Value{get;set;}
         public Tuple T_Value_Tuple{get;set;}
-        public Sphere Object{get;set;}       
+        public Shape Object{get;set;}       
 
         public Tuple Point{get;set;}
 
