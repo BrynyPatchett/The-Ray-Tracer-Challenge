@@ -1,6 +1,12 @@
 **The-Ray-Tracer-Challenge:**
 As a means to practice programming and to learn C# along with .NET Core I will be attempting to implement a Ray Tracer described in the following book: https://pragprog.com/book/jbtracer/the-ray-tracer-challenge
 
+**Chapter 10: Chapter focuses Introducing Reflections and Refractions**
+
+Result: While this chapter is only half complete, here is the Result for reflections, note refraction has yet to be implemented.
+
+![Screenshot](Screenshots/Reflections.png)
+
 **Chapter 9: Chapter focuses on refactoring code to make adding primitive objects faster to implement and more generic, added a Plane primitive**
 
 Result: The scene produced in Chapter 8 with a floor plane.

@@ -20,6 +20,8 @@ namespace The_Ray_Tracer_Challenge
 
         public Tuple OverPoint{get;set;}
 
+         public Tuple ReflectVector{get;set;}
+
         public Precomputation()
         {
             

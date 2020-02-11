@@ -129,6 +129,8 @@ public static Intersection[] IntersectShape(Shape s, Ray r){
                 comp.Inside = false;
             }
             comp.OverPoint = comp.Point + (comp.NormalVector * Arithmetic.EPSILON);
+            comp.ReflectVector = Tuple.Reflect(ray.Direction,comp.NormalVector);
+
             return comp;
           
         }

@@ -13,7 +13,11 @@ namespace The_Ray_Tracer_Challenge
          
         public float Specular { get; set; }
 
-         public float Shininess { get; set; }
+        public float Shininess { get; set; }
+
+         public float Reflective{ get; set; }   
+
+        public Pattern Pattern { get; set; }
 
        
 
@@ -24,26 +28,31 @@ namespace The_Ray_Tracer_Challenge
                 Diffuse = 0.9f;
                 Specular = 0.9f;
                 Shininess = 200.0f;
+                Reflective = 0.0f;
 
         }
-        public Material(Tuple colour, float ambient,float diffuse,float specular,float shininess)
+        public Material(Tuple colour, float ambient,float diffuse,float specular,float shininess,float reflective)
         {
                 Colour = colour;
                 Ambient = ambient;
                 Diffuse = diffuse;
                 Specular = specular;
                 Shininess = shininess;
+                Reflective = reflective;
         }
 
-        public static Tuple Lighting(Material m, PointLight light, Tuple position, Tuple eyeVec, Tuple normalVec, bool inShadow){
+        public static Tuple Lighting(Material m,Shape Object, PointLight light, Tuple position, Tuple eyeVec, Tuple normalVec, bool inShadow){
 
             Tuple colour;
             Tuple ambient;
             Tuple diffuse;
             Tuple specular;
-            
+            colour = m.Colour;
+            if(m.Pattern != null){
+                colour = m.Pattern.PatternAtShape(Object,position);
+            }
 
-            Tuple effective_colour = m.Colour * light.ColorIntensity;
+            Tuple effective_colour = colour * light.ColorIntensity;
             Tuple lightDirection = (light.Position - position).Normalise();
 
             ambient = effective_colour * m.Ambient;

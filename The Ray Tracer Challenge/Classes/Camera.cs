@@ -72,13 +72,14 @@ namespace The_Ray_Tracer_Challenge
                 return new Ray(origin,direction);
             
         }
+        //Later on attempt to move this to a GPGPU solution 
         public Canvas Render(World w){
             Canvas image = new Canvas(Hsize,Vsize);
 
             for(int y = 0; y < Vsize; y++){
                 for(int x = 0; x < Hsize; x ++){
                     Ray r = RayForPixel(x,y);
-                    Tuple Colour = World.ColourAt(w,r);
+                    Tuple Colour = World.ColourAt(w,r,w.ReflectionDepth);
                     image.SetPixelColour(x,y,Colour);
                 }
             }
