@@ -15,7 +15,11 @@ namespace The_Ray_Tracer_Challenge
 
         public float Shininess { get; set; }
 
-         public float Reflective{ get; set; }   
+        public float Reflective{ get; set; }   
+
+        public float Transparency{ get; set; }   
+
+        public float Refractive_index{ get; set; }
 
         public Pattern Pattern { get; set; }
 
@@ -29,9 +33,12 @@ namespace The_Ray_Tracer_Challenge
                 Specular = 0.9f;
                 Shininess = 200.0f;
                 Reflective = 0.0f;
+                Transparency = 0.0f;
+                Refractive_index = 1.0f;
+
 
         }
-        public Material(Tuple colour, float ambient,float diffuse,float specular,float shininess,float reflective)
+        public Material(Tuple colour, float ambient,float diffuse,float specular,float shininess,float reflective, float transparency, float refractive_index)
         {
                 Colour = colour;
                 Ambient = ambient;
@@ -39,6 +46,8 @@ namespace The_Ray_Tracer_Challenge
                 Specular = specular;
                 Shininess = shininess;
                 Reflective = reflective;
+                Transparency = transparency;
+                Refractive_index = refractive_index;
         }
 
         public static Tuple Lighting(Material m,Shape Object, PointLight light, Tuple position, Tuple eyeVec, Tuple normalVec, bool inShadow){

@@ -1346,6 +1346,137 @@ namespace The_Ray_Tracer_Challenge
                 Console.WriteLine(colour);*/
 
 
+                /*Sphere A = Sphere.GlassSphere();
+                A.Transform = new ScaleMatrix(2,2,2);
+                A.Material.Refractive_index = 1.5f;
+
+                Sphere B = Sphere.GlassSphere();
+                B.Transform = new TranslationMatrix(0,0,-0.25f);
+                B.Material.Refractive_index = 2f;
+
+                Sphere C = Sphere.GlassSphere();
+                C.Transform = new TranslationMatrix(0,0,0.25f);
+                C.Material.Refractive_index = 2.5f;
+
+                Ray r = new Ray(new Tuple(0,0,-4f,1),new Tuple(0,0,1,0));
+
+                
+                Intersection[] xs = Intersect.Intersections(new Intersection(2,A),new Intersection(2.75f,B),new Intersection(3.25f,C),new Intersection(4.75f,B),new Intersection(5.25f,C),new Intersection(6,A));
+
+                for(int i = 0; i < 7; i ++){
+                Precomputation comps = Intersect.PrepareComputations(xs[i],r,xs);
+                Console.Write(comps.n1 + " ");
+                Console.Write(comps.n2);
+                Console.WriteLine("");
+                }*/
+
+               /*Ray r = new Ray(new Tuple(0,0,-5f,1),new Tuple(0,0,1,0));
+               Sphere C = Sphere.GlassSphere();
+               C.Transform = new TranslationMatrix(0,0,1f);
+               Intersection i = new Intersection(5,C);
+               Intersection[] xs = Intersect.Intersections(i);
+               Precomputation comps = Intersect.PrepareComputations(i,r,xs);
+                 Console.WriteLine(comps.UnderPoint.z + " > " + Arithmetic.EPSILON/2);
+                 Console.WriteLine(comps.Point.z + " < " + comps.UnderPoint.z);*/
+
+                /* World w = new World();
+                 w.SceneObjects[0].Material.Transparency = 1.0f;
+                 w.SceneObjects[0].Material.Refractive_index = 1.5f;
+                 Ray r = new Ray(new Tuple(0,0,-5f,1),new Tuple(0,0,1,0));
+                 Intersection[] xs = Intersect.Intersections(new Intersection(4f,w.SceneObjects[0]),new Intersection(6f,w.SceneObjects[0]));
+                Precomputation comps = Intersect.PrepareComputations(xs[0],r,xs);
+                Tuple colour = World.RefractedColor(w,comps,0);
+                Console.WriteLine(colour);*/
+
+
+                 /*World w = new World();
+                 w.SceneObjects[0].Material.Transparency = 1.0f;
+                 w.SceneObjects[0].Material.Refractive_index = 1.5f;
+                 Ray r = new Ray(new Tuple(0,0,MathF.Sqrt(2)/2,1),new Tuple(0,1,0,0));
+                Intersection[] xs = Intersect.Intersections(new Intersection((-MathF.Sqrt(2)/2),w.SceneObjects[0]),new Intersection(MathF.Sqrt(2)/2,w.SceneObjects[0]));
+                 Precomputation comps = Intersect.PrepareComputations(xs[1],r,xs);
+                 Tuple colour = World.RefractedColor(w,comps,5);
+                Console.WriteLine(colour);*/
+
+             /*   World w = new World();
+                w.SceneObjects[0].Material.Transparency = 1.0f;
+                w.SceneObjects[0].Material.Pattern = new testPattern();
+                w.SceneObjects[1].Material.Transparency = 1.0f;
+                w.SceneObjects[1].Material.Refractive_index = 1.5f;
+                Ray r = new Ray(new Tuple(0,0,0.1f,1),new Tuple(0,1,0,0));
+                Intersection[] xs = Intersect.Intersections(new Intersection(-0.9899f,w.SceneObjects[0]),new Intersection(-0.4899f,w.SceneObjects[1]),new Intersection(0.4899f,w.SceneObjects[1]),new Intersection(0.9899f,w.SceneObjects[0]));
+                Precomputation comps = Intersect.PrepareComputations(xs[2],r,xs);
+                 Tuple colour = World.RefractedColor(w,comps,5);
+                 Console.WriteLine(colour);*/
+
+                /*World w = new World();
+                Plane floor = new Plane();
+                floor.Transform = new TranslationMatrix(0,-1,0);
+                floor.Material.Transparency = 0.5f;
+                floor.Material.Refractive_index = 1.5f;
+                w.AddShapeToScene(floor);
+
+                Sphere ball = new Sphere();
+                ball.Material.Colour = new Tuple(1,0,0);
+                ball.Material.Ambient = 0.5f;
+                ball.Transform = new TranslationMatrix(0,-3.5f,-0.5f);
+                w.AddShapeToScene(ball);
+                Ray r = new Ray(new Tuple(0,0,-3f,1),new Tuple(0,-MathF.Sqrt(2)/2 ,MathF.Sqrt(2)/2,0));
+                Intersection[] xs = Intersect.Intersections(new Intersection(MathF.Sqrt(2),floor));
+                Precomputation comps = Intersect.PrepareComputations(xs[0],r,xs);
+                Tuple colour = World.ShadeHit(w,comps,5);
+                Console.WriteLine(colour);*/
+
+                /*Shape A = Sphere.GlassSphere();
+                Ray r = new Ray(new Tuple(0,0,MathF.Sqrt(2)/2,1),new Tuple(0,1,0));
+                Intersection[] xs = Intersect.Intersections(new Intersection(-MathF.Sqrt(2)/2,A),new Intersection(MathF.Sqrt(2)/2,A));
+                Precomputation comps = Intersect.PrepareComputations(xs[1],r,xs);
+                float reflectance = World.Schlick(comps);
+                Console.WriteLine(reflectance);*/
+
+                /*Shape A = Sphere.GlassSphere();
+                Ray r = new Ray(new Tuple(0,0,0,1),new Tuple(0,1,0));
+                Intersection[] xs = Intersect.Intersections(new Intersection(-1,A),new Intersection(1,A));
+                Precomputation comps = Intersect.PrepareComputations(xs[1],r,xs);
+                float reflectance = World.Schlick(comps);
+                Console.WriteLine(reflectance);
+
+                Shape b = Sphere.GlassSphere();
+                Ray r2 = new Ray(new Tuple(0,0.99f,-2,1),new Tuple(0,0,1));
+                Intersection[] xs1 = Intersect.Intersections(new Intersection(1.8589f,b));
+                Precomputation comps1 = Intersect.PrepareComputations(xs1[0],r2,xs1);
+                float reflectance1 = World.Schlick(comps1);
+                Console.WriteLine(reflectance1);*/
+
+
+                /*World w = new World();
+                Ray r = new Ray(new Tuple(0,0,-3f,1),new Tuple(0,-MathF.Sqrt(2)/2 ,MathF.Sqrt(2)/2,0));
+
+                Plane floor = new Plane();
+                floor.Transform = new TranslationMatrix(0,-1,0);
+                floor.Material.Reflective = 0.5f;
+                floor.Material.Transparency = 0.5f;
+                floor.Material.Refractive_index = 1.5f;
+                w.AddShapeToScene(floor);
+
+                Sphere ball = new Sphere();
+                ball.Material.Colour = new Tuple(1,0,0);
+                ball.Material.Ambient = 0.5f;
+                ball.Transform = new TranslationMatrix(0,-3.5f,-0.5f);
+                w.AddShapeToScene(ball);
+    
+                Intersection[] xs = Intersect.Intersections(new Intersection(MathF.Sqrt(2),floor));
+                Precomputation comps = Intersect.PrepareComputations(xs[0],r,xs);
+                Tuple colour = World.ShadeHit(w,comps,5);
+                Console.WriteLine(colour);*/
+
+
+
+
+
+
+
+
 
 
 

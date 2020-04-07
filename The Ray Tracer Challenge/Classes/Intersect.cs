@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 
 namespace The_Ray_Tracer_Challenge
@@ -111,9 +112,57 @@ public static Intersection[] IntersectShape(Shape s, Ray r){
             return array;
         }
      
-        public static Precomputation PrepareComputations(Intersection i,  Ray ray){
+        public static Precomputation PrepareComputations(Intersection i,  Ray ray, Intersection[] optionalXS = null ){
 
+            if(optionalXS == null){
+                optionalXS = new Intersection[1];
+                optionalXS[0] = i;
+            }
+
+            List<Shape> containers = new List<Shape>();
             Precomputation comp = new Precomputation();
+
+            for(int index = 0; index < optionalXS.Length; index ++){
+
+                if(optionalXS[index] == i){
+
+                    if(containers.Count == 0){
+                        comp.n1 = 1.0f;
+                    }
+                    else{
+                        comp.n1 = containers[containers.Count - 1].Material.Refractive_index;
+                    }
+                }
+
+                if(containers.Contains(optionalXS[index].Object)){
+                    containers.Remove(optionalXS[index].Object);
+                }else{
+                     containers.Add(optionalXS[index].Object);
+                }
+
+                if(optionalXS[index] == i){
+
+                    if(containers.Count == 0){
+                        comp.n2 = 1.0f;
+                    }
+                    else{
+                        comp.n2 = containers[containers.Count - 1].Material.Refractive_index;
+                    }
+
+                break;
+                }
+
+            }
+
+         
+
+
+
+            
+
+
+
+            //Precomputation comp = new Precomputation();
             comp.T_Value = i.T_Value;
             comp.T_Value_Tuple = i.T_Value_Tuple;
             comp.Object = i.Object;
@@ -129,6 +178,7 @@ public static Intersection[] IntersectShape(Shape s, Ray r){
                 comp.Inside = false;
             }
             comp.OverPoint = comp.Point + (comp.NormalVector * Arithmetic.EPSILON);
+            comp.UnderPoint = comp.Point - (comp.NormalVector * Arithmetic.EPSILON);
             comp.ReflectVector = Tuple.Reflect(ray.Direction,comp.NormalVector);
 
             return comp;

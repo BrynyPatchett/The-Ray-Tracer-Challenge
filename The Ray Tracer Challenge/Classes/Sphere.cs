@@ -7,14 +7,6 @@ namespace The_Ray_Tracer_Challenge
     {
 
 
-      
-      
-
-        public Sphere()
-        {
-        }
-
-
         public override Intersection[] LocalIntersect(Ray localRay){
 
 
@@ -40,15 +32,15 @@ namespace The_Ray_Tracer_Challenge
         public override Tuple LocalNormalAt(Tuple localPoint) {
             return localPoint - new Tuple(0,0,0,1);
 
-
-
-
         }
-       
-
-     
-     
 
 
+
+        public static Sphere GlassSphere(){
+            Sphere S = new Sphere();
+            S.Material.Transparency = 1.0f;
+            S.Material.Refractive_index = 1.5f;
+            return S;
+        }
     }
 }

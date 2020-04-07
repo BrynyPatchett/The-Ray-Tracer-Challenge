@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace The_Ray_Tracer_Challenge
 {
@@ -58,7 +59,15 @@ namespace The_Ray_Tracer_Challenge
            bool shadowed = IsShadowed(world,comps.OverPoint);
             Tuple Colour = Material.Lighting(comps.Object.Material,comps.Object,world.SceneLight,comps.OverPoint,comps.EyeVector,comps.NormalVector,shadowed);
             Tuple reflectedColor = world.ReflectedColor(comps,remaining);
-           return Colour + reflectedColor;
+            Tuple refractedColor = RefractedColor(world,comps,remaining);
+            Material m = comps.Object.Material;
+
+            if(m.Reflective > 0f && m.Transparency >0f){
+                float reflectance = Schlick(comps);
+                return Colour + reflectedColor * reflectance + refractedColor * (1 - reflectance);
+            }else{
+                return Colour + reflectedColor + refractedColor ;
+            }  
            
         }
         
@@ -118,6 +127,47 @@ namespace The_Ray_Tracer_Challenge
             SceneObjects = newShapeArray;
 
         }
+
+        public static Tuple  RefractedColor(World world, Precomputation comp, int remaining){
+           
+            if(comp.Object.Material.Transparency == 0 || remaining == 0){
+                return new Tuple(0,0,0);
+            }
+
+            float n_ratio = comp.n1/ comp.n2;
+            float cos_i = comp.EyeVector.Dot(comp.NormalVector);
+            float sin2_t = (n_ratio * n_ratio) * (1 - (cos_i * cos_i));
+
+             if(sin2_t > 1){
+                 return new Tuple(0,0,0);
+             }
+
+            float cos_t = MathF.Sqrt(1.0f - sin2_t);
+            Tuple direction = comp.NormalVector * (n_ratio * cos_i - cos_t) - comp.EyeVector * n_ratio;
+            Ray refract_ray = new Ray(comp.UnderPoint, direction);
+
+            return ColourAt(world,refract_ray,remaining-1) * comp.Object.Material.Transparency;
+          
+        }
+
+        public static float Schlick(Precomputation comp){
+            float cos = comp.EyeVector.Dot(comp.NormalVector);
+
+            if(comp.n1 > comp.n2){
+                float ratio = comp.n1/ comp.n2;
+                float sin2_t = ratio * ratio * (1.0f - (cos * cos));
+                if(sin2_t > 1.0){
+                    return 1.0f;
+                }
+                float cos_t  = MathF.Sqrt(1.0f - sin2_t);
+                cos = cos_t;
+            }
+            float r0 = ((comp.n1 - comp.n2) / (comp.n1 + comp.n2)) * ((comp.n1 - comp.n2) / (comp.n1 + comp.n2));
+            return r0 + (1-r0) * MathF.Pow((1 - cos), 5);
+
+
+        }
+
 
     }
 }

@@ -12,7 +12,7 @@ namespace The_Ray_Tracer_Challenge
         {
             
 
-               Shape p = new Plane();
+               /*Shape p = new Plane();
                p.Material.Colour = new Tuple(1.0f,0f,0.0f);
                p.Material.Diffuse = 0.7f;
                p.Material.Specular = 0.3f;
@@ -41,11 +41,13 @@ namespace The_Ray_Tracer_Challenge
 
               Sphere right = new Sphere();
               right.Transform = new TranslationMatrix(1.5f,0.5f,-0.5f) * new ScaleMatrix(0.5f,0.5f,0.5f);
-              right.Material.Colour = new Tuple(0.5f,1f,0.1f);
+              right.Material.Colour = new Tuple(0.0f,0f,0f);
               right.Material.Diffuse = 0.7f;
-              right.Material.Specular = 0.3f;
-              right.Material.Pattern = new CheckersPattern(new Tuple(1,0,0.9f,0),new Tuple(0.5f,0,1,0));
-              right.Material.Pattern.Transform = new ScaleMatrix(0.5f,0.5f,0.5f);
+              right.Material.Specular = 0.1f;
+              right.Material.Transparency = 0.85f;
+              right.Material.Reflective = 0.2f;
+              right.Material.Refractive_index = 1.333f;
+              
 
               Sphere left = new Sphere();
               left.Transform = new TranslationMatrix(-1.5f,0.33f,-0.75f) * new ScaleMatrix(0.33f,0.33f,0.33f);
@@ -59,14 +61,13 @@ namespace The_Ray_Tracer_Challenge
               Shape[] WorldObjects = {p,left,middle,right};
               PointLight light = new PointLight(new Tuple(-10,10,-10,1), new Tuple(1,1,1,0));
               World world = new World(light,WorldObjects);
-              Camera camera = new Camera(1920,1080,MathF.PI/3);
+              Camera camera = new Camera(800,600,MathF.PI/3);
               camera.Transform = new ViewMatrix(new Tuple(0,1.5f,-5,1),new Tuple(0,1,0,1), new Tuple(0,1,0,0));
 
               Canvas image = camera.Render(world);
 
               image.saveCanvasToPPM("FifthSceneFHD.ppm");
-              Console.WriteLine("done"); 
-
+              Console.WriteLine("done"); */
               Tests.RunTests();
 
               

@@ -22,6 +22,12 @@ namespace The_Ray_Tracer_Challenge
 
          public Tuple ReflectVector{get;set;}
 
+         public float n1{get;set;}
+
+         public float n2{get;set;}
+
+         public Tuple UnderPoint{get;set;}
+
         public Precomputation()
         {
             

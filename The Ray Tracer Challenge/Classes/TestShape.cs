@@ -7,12 +7,7 @@ namespace The_Ray_Tracer_Challenge
     {
 
 
-        public static long GlobalId = 0;
-        public long Id { get; set; }
-
-        public Matrix Transform { get; set; }
-
-        public Material Material { get; set; }
+    
       
 
         public TestShape()
