@@ -1471,7 +1471,16 @@ namespace The_Ray_Tracer_Challenge
                 Console.WriteLine(colour);*/
 
 
-
+                /* Cube c = new Cube();
+                Ray r = new Ray(new Tuple(0,0.5f,0,1),new Tuple(0,0,1,0));
+                Intersection[] xs = c.LocalIntersect(r);
+                Console.WriteLine(xs.Length);
+                Console.WriteLine(xs[0].T_Value);
+                Console.WriteLine(xs[1].T_Value);*/
+                /*Cube c = new Cube();
+                Tuple point = new Tuple(-1f,-1f,-1f,1);
+                Tuple normal = c.LocalNormalAt(point);
+                Console.WriteLine(normal);*/
 
 
 

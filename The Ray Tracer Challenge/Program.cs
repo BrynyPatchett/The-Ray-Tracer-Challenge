@@ -12,7 +12,7 @@ namespace The_Ray_Tracer_Challenge
         {
             
 
-               /*Shape p = new Plane();
+             Shape p = new Plane();
                p.Material.Colour = new Tuple(1.0f,0f,0.0f);
                p.Material.Diffuse = 0.7f;
                p.Material.Specular = 0.3f;
@@ -34,14 +34,16 @@ namespace The_Ray_Tracer_Challenge
               middle.Material.Colour = new Tuple(0.1f,1f,0.5f);
               middle.Material.Diffuse = 0.7f;
               middle.Material.Specular = 0.3f;
-              middle.Material.Reflective = 1.0f;
+              middle.Material.Reflective = 0.9f;
+              middle.Material.Refractive_index = 1.333f;
+              middle.Material.Transparency= 0.5f;
               middle.Material.Pattern = new RingPattern(new Tuple(1,1,1,0),new Tuple(0,0,0,0));
               middle.Material.Pattern.Transform = new ScaleMatrix(0.25f,0.25f,0.25f) * new RotationMatrix_X(90);
              
 
-              Sphere right = new Sphere();
+              Cube right = new Cube();
               right.Transform = new TranslationMatrix(1.5f,0.5f,-0.5f) * new ScaleMatrix(0.5f,0.5f,0.5f);
-              right.Material.Colour = new Tuple(0.0f,0f,0f);
+              right.Material.Colour = new Tuple(0.2f,0f,0f);
               right.Material.Diffuse = 0.7f;
               right.Material.Specular = 0.1f;
               right.Material.Transparency = 0.85f;
@@ -66,8 +68,8 @@ namespace The_Ray_Tracer_Challenge
 
               Canvas image = camera.Render(world);
 
-              image.saveCanvasToPPM("FifthSceneFHD.ppm");
-              Console.WriteLine("done"); */
+              image.saveCanvasToPPM("SixSceneFHD.ppm");
+              Console.WriteLine("done"); 
               Tests.RunTests();
 
               
