@@ -4,8 +4,8 @@ As a means to practice programming and to learn C# along with .NET Core I will b
 **Chapter 10 & 11: Finished Refractions and Added the Cube Primitive**
 
 Result: Completed Chapter 10 with working transparency and refraction, also complete Chapter 11 which introduced the Cube Primitive.
-![Screenshot](Screenshots/RefractionsAndCubes.png)
 
+![Screenshot](Screenshots/RefractionsAndCubes.png)
 
 
 **Chapter 10: Chapter focuses Introducing Reflections and Refractions**
