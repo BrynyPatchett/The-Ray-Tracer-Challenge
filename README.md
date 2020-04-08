@@ -1,16 +1,16 @@
 **The-Ray-Tracer-Challenge:**
 As a means to practice programming and to learn C# along with .NET Core I will be attempting to implement a Ray Tracer described in the following book: https://pragprog.com/book/jbtracer/the-ray-tracer-challenge
 
-**Chapter 10 & 11: Finished Refractions and Added the Cube Primitive**
+**Chapter 11 & 12: Finished Refractions and Added the Cube Primitive**
 
-Result: Completed Chapter 10 with working transparency and refraction, also complete Chapter 11 which introduced the Cube Primitive.
+Result: Completed Chapter 11 with working transparency and refraction, also complete Chapter 12 which introduced the Cube Primitive.
 
 ![Screenshot](Screenshots/RefractionsAndCubes.png)
 
 
-**Chapter 10: Chapter focuses Introducing Reflections and Refractions**
+**Chapter 10 & 11: Chapter 10 focused on adding patterns to scene objects while chapter 11 focuses Introducing Reflections and Refractions**
 
-Result: While this chapter is only half complete, here is the Result for reflections, note refraction has yet to be implemented.
+Result: While this chapter 11 is only half complete, here is the Result for reflections, note refraction has yet to be implemented.
 
 ![Screenshot](Screenshots/Reflections.png)
 
